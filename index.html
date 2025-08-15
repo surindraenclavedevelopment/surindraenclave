@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surindra Enclave</title>
+  <style>
+    :root {
+      --saffron: #ff9933;
+      --white: #ffffff;
+      --green: #138808;
+      --blue: #000080; /* Ashoka Chakra blue */
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--white);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--saffron), var(--white), var(--green));
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: var(--blue);
+      font-weight: bold;
+    }
+
+    nav a {
+      color: var(--blue);
+      text-decoration: none;
+      margin: 0 0.7rem;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 0;
+      background: var(--blue);
+      transition: 0.3s;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem;
+      color: white;
+      background: linear-gradient(rgba(255,153,51,0.7), rgba(19,136,8,0.7)), url('images/img1.jpg') center/cover no-repeat;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      background: rgba(0,0,0,0.4);
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--blue);
+      margin-bottom: 1rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    footer {
+      background: linear-gradient(90deg, var(--saffron), var(--white), var(--green));
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      font-weight: bold;
+      color: var(--blue);
+    }
+
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .lightbox-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80%;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Surindra Enclave Socity</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to Surindra Enclave Socity</h2>
+    <p>A peaceful, green, and family-friendly society in the heart of the city.</p>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Surindra Enclave is a well-planned residential community where all residents live together in harmony. We celebrate every festival with joy and unity, creating a warm and inclusive atmosphere. Our society offers a safe and secure environment for families. The Residents Welfare Association actively works to maintain cleanliness, ensure harmony, and foster a vibrant social life for everyone.</p>
+  </section>
+
+  <section id="amenities">
+    <h2>Amenities</h2>
+    <div class="card-grid">
+      <div class="card"><h3>🛕 Temple</h3><p>Spiritual place for residents.</p></div>
+      <div class="card"><h3>🐾 Pet-Friendly Area</h3><p>For pet lovers and their furry friends.</p></div>
+      <div class="card"><h3>📢 Community Notice Board</h3><p>For important announcements.</p></div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>Independence Day 2025</h2>
+    <div class="gallery-grid">
+      <img src="img1.jpg.jpeg" alt="Society View 1" onclick="openLightbox(this.src)">
+      <img src="img2.jpg.jpeg" alt="Society View 2" onclick="openLightbox(this.src)">
+      <img src="img3.jpg.jpeg" alt="Society View 3" onclick="openLightbox(this.src)">
+      <img src="img4.jpg.jpeg" alt="Society View 4" onclick="openLightbox(this.src)">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>📞 Phone:</strong> +91 9592604465</p>
+    <p><strong>📧 Email:</strong> surindraenclavedevelopment@gmail.com</p>
+    <p><strong>📍 Address:</strong> High Ground Road, Zirakpur, Punjab 140603</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Surindra Enclave Residents Welfare Association | Proudly Indian 🇮🇳</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox').style.display = 'block';
+      document.getElementById('lightbox-img').src = src;
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
